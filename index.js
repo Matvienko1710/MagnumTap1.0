@@ -1,7 +1,7 @@
 import { Telegraf } from 'telegraf';
 import { getUser, updateUser } from './db.js';
 
-const bot = new Telegraf('7668979667:AAFrTOKH0nz0pS_XumlAa3xhYKffDm4Sjnk'); // <-- замени на свой токен
+const bot = new Telegraf(process.env.BOT_TOKEN); // <-- замени на свой токен
 
 bot.start((ctx) => {
   ctx.reply('👋 Добро пожаловать! Жми кнопки: Фарм, Бонус или Профиль.', {
