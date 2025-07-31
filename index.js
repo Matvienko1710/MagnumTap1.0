@@ -3,6 +3,10 @@ import { getUser, updateUser } from './db.js';
 
 const bot = new Telegraf(process.env.BOT_TOKEN); // <-- замени на свой токен
 
+if (!process.env.BOT_TOKEN) {
+  throw new Error("BOT_TOKEN must be provided!");
+}
+
 bot.start((ctx) => {
   ctx.reply('👋 Добро пожаловать! Жми кнопки: Фарм, Бонус или Профиль.', {
     reply_markup: {
